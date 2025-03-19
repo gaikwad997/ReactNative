@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
+import Button from './Button'; // Import your Button component
 
 export default function Page() {
+  const handlePress = () => {
+    alert('Button clicked!');
+  };
   return (
     <View style={styles.container}>
-      <View style={styles.main}>
         <Text style={styles.title}>Hello World</Text>
-      </View>
+        <Button title="Click Me" onPress={handlePress} />
     </View>
   );
 }
@@ -13,21 +16,17 @@ export default function Page() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
+    alignItems: 'center',
     padding: 24,
   },
   main: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
     maxWidth: 960,
-    marginHorizontal: "auto",
+    marginHorizontal: 'auto',
   },
   title: {
     fontSize: 64,
-    fontWeight: "bold",
-  },
-  subtitle: {
-    fontSize: 36,
-    color: "#38434D",
+    fontWeight: 'bold',
   },
 });
